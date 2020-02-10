@@ -2,6 +2,16 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import CharacterInfo from "./components/CharacterInfo";
 import axios from "axios";
+import styled from "styled-components";
+
+const List = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 80vw;
+  margin: 0 auto;
+  border: 2px solid black;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -25,9 +35,11 @@ const App = () => {
     console.log("characters", characters),
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {characters.map((item, index) => {
-        return <CharacterInfo key={index} name={item.name} height={item.height} homeworld={item.homeworld} />
-      })}
+      <List>
+        {characters.map((item, index) => {
+          return <CharacterInfo key={index} name={item.name} height={item.height} hair={item.hair_color} eye={item.eye_color} />
+        })}
+      </List>
     </div>
   );
 }
