@@ -10,7 +10,6 @@ const List = styled.div`
   justify-content: space-between;
   width: 80vw;
   margin: 0 auto;
-  border: 2px solid black;
 `;
 
 const App = () => {
@@ -37,7 +36,7 @@ const App = () => {
       <h1 className="Header">React Wars</h1>
       <List>
         {characters.map((item, index) => {
-          return <CharacterInfo key={index} name={item.name} height={item.height} hair={item.hair_color} eye={item.eye_color} />
+          return <CharacterInfo key={index} name={item.name} height={item.height} hair={item.hair_color} eye={item.eye_color} birthyear={item.birth_year} />
         })}
       </List>
     </div>
